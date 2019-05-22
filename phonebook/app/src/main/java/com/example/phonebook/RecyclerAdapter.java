@@ -1,6 +1,7 @@
 package com.example.phonebook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,9 +15,16 @@ import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
 
+    private View.OnClickListener onItemClick;
+
     /* adapter에 들어갈 list */
     private ArrayList<Data> listData = new ArrayList<>();
     private Context context;
+    private Context ctx;
+
+    void setOnItemClickListener(View.OnClickListener l){
+        onItemClick = l;
+    }
 
     @NonNull
     @Override
@@ -26,7 +34,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
 
         this.context = parent.getContext();
-        /* ViewHolder가 return 됨됨 */
+        /* ViewHolder가 return 됨 */
+        view.setOnClickListener(onItemClick);
         return new ItemViewHolder(view);
     }
 
@@ -54,7 +63,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
     /** RecyclerView의 핵심인 ViewHolder
      *  여기서 subView를 setting 해준다. */
-    class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ItemViewHolder extends RecyclerView.ViewHolder{
 
         private TextView textView;
 
@@ -67,16 +76,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
         void onBind(Data data){
             textView.setText(data.getName());
-            textView.setOnClickListener(this);
+            //textView.setOnClickListener(this);
         }
 
+        /*
         @Override
         public void onClick(View view) {
 
-            /* getAdapterPosition() 이 아이템 인덱스 */
-            Toast.makeText(context, "눌렸습니다."+getAdapterPosition(), Toast.LENGTH_SHORT).show();
+            // getAdapterPosition() 이 아이템 인덱스
+            Toast.makeText(context, "왼쪽 리스트 눌렸습니다."+getAdapterPosition(), Toast.LENGTH_SHORT).show();
+
+
 
         }
+        */
+
     }
 }
 
