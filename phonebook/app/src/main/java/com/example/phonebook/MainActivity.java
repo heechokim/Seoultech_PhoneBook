@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getData(){
 
-        List<String> listName = Arrays.asList("총장실", "비서실장", "비서실", "공과대학", "미래융합대학", "메이커스칼리지", "정보통신대학" , "에너지바이오대학", "조형대학", "인문사회대학",
+        List<String> listName = Arrays.asList("전체", "총장실", "비서실장", "비서실", "공과대학", "미래융합대학", "메이커스칼리지", "정보통신대학" , "에너지바이오대학", "조형대학", "인문사회대학",
                 "기술경영융합대학", "대학원", "행정부서", "교육지원/부속시설", "후생복지시설", "학생자치기구");
 
         for(int i = 0 ; i < listName.size() ; i++){
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
             adapter.addItem(data);
         }
+
         adapter.notifyDataSetChanged();
     }
 }
