@@ -3,7 +3,6 @@ package com.example.phonebook;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,10 +71,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
         @Override
         public void onClick(View view) {
-
-            /* getAdapterPosition() 이 아이템 인덱스 */
-            Toast.makeText(context, "눌렸습니다."+getAdapterPosition(), Toast.LENGTH_SHORT).show();
-
+            switch (view.getId()){
+                case R.id.linearItem:
+                    Toast.makeText(context, "눌렸습니다.", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }
