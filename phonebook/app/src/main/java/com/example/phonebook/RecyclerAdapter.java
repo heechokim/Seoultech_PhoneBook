@@ -76,20 +76,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
         void onBind(Data data){
             textView.setText(data.getName());
-            //textView.setOnClickListener(this);
-        }
-
-        /*
-        @Override
-        public void onClick(View view) {
-
-            // getAdapterPosition() 이 아이템 인덱스
-            Toast.makeText(context, "왼쪽 리스트 눌렸습니다."+getAdapterPosition(), Toast.LENGTH_SHORT).show();
-
-
 
         }
-        */
+
 
     }
 }

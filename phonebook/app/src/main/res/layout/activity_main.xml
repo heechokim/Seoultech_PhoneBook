@@ -33,12 +33,16 @@
             android:layout_marginRight="0dp">
         </android.support.v7.widget.RecyclerView>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView2"
+        <FrameLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="615dp"
-            >
-        </android.support.v7.widget.RecyclerView>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </FrameLayout>
+
+
+
     </LinearLayout>
 
 
