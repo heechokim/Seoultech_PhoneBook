@@ -11,14 +11,44 @@
         android:id="@+id/linearlayout_search"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TextView
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:scaleType="fitStart"
+                android:background="@drawable/img_ui01_01" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="검색"
-            android:textSize="25sp"
-            android:gravity="center_vertical|center_horizontal"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="연락처"
+                android:textSize="25dp"
+                />
+
+            <!--검색 옆에 돋보기 이미지 구현 -->
+            <EditText
+                android:id="@+id/search_phonenum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="검색"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 
