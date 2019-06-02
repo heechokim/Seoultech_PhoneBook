@@ -1,5 +1,7 @@
 package com.example.fragmenttest;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +9,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager recyclerviewLayoutmanager;
@@ -63,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragment14 = new Fragment14();
 
         setFragment(0);
+
+        //search_phonenum.addTextChangedListener(new);
 
     }
 
@@ -180,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void leftList(){
+
         data.clear();
         data.add(new Data("전체"));
         data.add(new Data("총장실"));
@@ -196,7 +204,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         data.add(new Data("교육지원/부속시설"));
         data.add(new Data("후생복지시설"));
         data.add(new Data("학생자치기구"));
+
     }
+
 }
 /** 메인 엑티비티 자바 파일 작성하기
  * 1. activity.xml 의 버튼 3개를 선언한다.
