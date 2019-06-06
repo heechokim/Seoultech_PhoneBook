@@ -27,6 +27,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
     private ArrayList<Data> data = new ArrayList<>();
     private MyAdapter myAdapter;
     private Dialog dialog;
+    private EditText search_phonenum;
 
     @Nullable
     @Override
