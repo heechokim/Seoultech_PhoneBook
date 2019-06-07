@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("전화번호부");
 
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView_left);
         recyclerView.setHasFixedSize(true);
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int idx = recyclerView.getChildAdapterPosition(v);
         switch (idx) {
             case 0:
+
                 setFragment(0);
                 break;
             case 1:
