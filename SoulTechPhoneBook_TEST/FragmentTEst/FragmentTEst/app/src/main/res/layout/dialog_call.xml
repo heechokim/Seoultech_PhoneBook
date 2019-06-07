@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/call2"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"/>
+            <TextView
+                android:id="@+id/dialog_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="010-2263-3434"
+                android:textColor="#00205b"
+                android:textSize="30sp"
+                android:gravity="center_horizontal|center_vertical"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            >
+            <Button
+                android:id="@+id/dialog_btn1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00205b"
+                android:layout_margin="3dp"
+                android:text="통화"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/dialog_btn2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00205b"
+                android:textColor="#FFFFFF"
+                android:layout_margin="3dp"
+                android:text="복사"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
+<!--custom 다이얼로그 띄우기
+1. 다이얼로그.xml 만들기
+2. 어댑터 클래스의 MyViewHolder 에 다이얼로그 layout 을 선언하고 초기화 한다.
+3. 오른쪽 리스트의 아이템들에 클릭리스너를 부여한다.
+( 어댑터 클래스의 onCreateView 함수 내에서 리스트 아이템을 클릭하였을때
+ 클릭 리스너를 set 해준다. )
+ -->
