@@ -8,12 +8,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,22 +31,21 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
     private ArrayList<Data> data = new ArrayList<>();
     private MyAdapter myAdapter;
     private Dialog dialog;
-    private EditText search_phonenum;
+    EditText search_phonenum;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_right2, container, false);
+        search_phonenum = (EditText) view.findViewById(R.id.search_phonenum);
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerview_right2);
         recyclerView.setHasFixedSize(true); // 리사이클러뷰를 고정시켜준다. 왜 고정시키는줄은 모르겠음 ㅋㅋ
         recyclerviewLayoutmanager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(recyclerviewLayoutmanager);
 
-
         myAdapter = new MyAdapter(data,getContext());
         myAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(myAdapter);
-
 
         dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.dialog_call);
@@ -64,6 +67,27 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         /** 이거 번호, data 에 번호 쓰는 란 만들어서 받아와야 할듯!*/
         dialog_textview.setText("010-2352-0300");
 
+        search_phonenum.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged (CharSequence cs,int arg1, int arg2, int arg3){
+                // When user changed the Text
+            }
+
+            @Override
+            public void beforeTextChanged (CharSequence arg0,int arg1, int arg2,
+                                           int arg3){
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged (Editable arg0){
+                // TODO Auto-generated method stub
+            }
+
+        });
+
         return view;
     }
 
@@ -71,6 +95,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         data.clear();
         data.add(new Data("테"));
         data.add(new Data("스"));
@@ -205,8 +230,8 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         data.add(new Data("인문사회대학"));
         data.add(new Data("기술경영융합대학"));
 
-        Intent intent = new Intent(getActivity(),MainActivity.class);
-        intent.putExtra("Data",data);
+
+
     }
 
     @Override
@@ -220,6 +245,8 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         dialog.show();
 
     }
+
+
 
 }
 
