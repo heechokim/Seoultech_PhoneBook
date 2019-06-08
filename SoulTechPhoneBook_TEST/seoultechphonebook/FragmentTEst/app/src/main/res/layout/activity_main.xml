@@ -6,71 +6,69 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
     <LinearLayout
-        android:id="@+id/linearlayout_search"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
         android:orientation="horizontal"
         >
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="100dp"
-            android:layout_marginRight="20dp"
-            android:scaleType="fitStart"
-            android:background="@drawable/img_ui01_01" />
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="연락처"
-                android:textSize="25dp"
-                />
-
-            <!--검색 옆에 돋보기 이미지 구현 -->
-            <EditText
-                android:id="@+id/search_phonenum"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="검색"
-                />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:id="@+id/linearlayout_left"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView_left"
-                android:layout_width="160dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="0dp"
-                android:overScrollMode="never"
+            <LinearLayout
+                android:id="@+id/linearlayout_search"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
                 >
-            </android.support.v7.widget.RecyclerView>
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="fitStart"
+                    android:background="@drawable/img_ui01_01" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_left"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView_left"
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0dp"
+                    android:overScrollMode="never"
+                    >
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
         </LinearLayout>
-        <FrameLayout
-            android:id="@+id/framelayout_right"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
-        </FrameLayout>
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/framelayout_right"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </FrameLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="4"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="#000000"
         android:orientation="horizontal">
         <LinearLayout
@@ -96,13 +94,13 @@
 
 </LinearLayout>
 
-<!--프래그먼트로 리사이클러뷰 교체하기 샘플 코드
-    1. implementation 'com.android.support:recyclerview-v7:28.0.0' 라이브러리를 추가한다.
-    2. activity_main.xml 에서 fragment로 채울 영역을 작성해준다.(FrameLayout사용)
-    3. fragment 를 구성할 xml 을 3개 작성한다. (새로운 layout파일 추가 : fragment_right.xml)
-    4. 리스트의 아이템 xml 을 작성한다. (새로운 layout파일 추가 : item.xml)
-    5. Data 클래스를 생성한다.
-    6. Adapter 클래스를 생성한다.
-    7. Fragment 상속받은 자바 파일을 3개 작성한다.
-    8. MainActivity.java 파일을 작성한다.
-    -->
+    <!--프래그먼트로 리사이클러뷰 교체하기 샘플 코드
+        1. implementation 'com.android.support:recyclerview-v7:28.0.0' 라이브러리를 추가한다.
+        2. activity_main.xml 에서 fragment로 채울 영역을 작성해준다.(FrameLayout사용)
+        3. fragment 를 구성할 xml 을 3개 작성한다. (새로운 layout파일 추가 : fragment_right.xml)
+        4. 리스트의 아이템 xml 을 작성한다. (새로운 layout파일 추가 : item.xml)
+        5. Data 클래스를 생성한다.
+        6. Adapter 클래스를 생성한다.
+        7. Fragment 상속받은 자바 파일을 3개 작성한다.
+        8. MainActivity.java 파일을 작성한다.
+        -->

@@ -16,15 +16,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Fragment1 extends Fragment implements View.OnClickListener {
 
@@ -35,6 +39,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
     private MyAdapter myAdapter;
     private Dialog dialog;
     private Intent intent;
+    EditText search_phonenum;
 
 
     @Nullable
@@ -49,6 +54,27 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         myAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(myAdapter);
 
+        search_phonenum = (EditText) view.findViewById(R.id.search_phonenum);
+        search_phonenum.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged (CharSequence cs,int arg1, int arg2, int arg3){
+                myAdapter.filter(cs.toString());
+            }
+
+            @Override
+            public void beforeTextChanged (CharSequence arg0,int arg1, int arg2, int arg3){
+
+            }
+
+            @Override
+            public void afterTextChanged (Editable arg0){
+              /** String text = search_phonenum.getText().toString().toLowerCase(Locale.getDefault());
+                myAdapter.filter(text);*/
+              myAdapter.filter(arg0.toString());
+            }
+
+        });
 
         return view;
     }
@@ -59,6 +85,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         data.clear();
         /* 총장실 */
+        data.add(new Data("abc","02-970-6000", "029706000"));
         data.add(new Data("총장실","02-970-6000", "029706000"));
         data.add(new Data("비서실장","02-970-6001", "029706001"));
         data.add(new Data("비서실","02-970-6001~2", "029706001"));

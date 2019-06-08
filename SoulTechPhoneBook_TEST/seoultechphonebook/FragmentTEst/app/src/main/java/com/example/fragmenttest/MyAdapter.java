@@ -10,24 +10,80 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>  {
+    private ArrayList<Data> items;
     private ArrayList<Data> Mydata;
     private View.OnClickListener onItemClick;
     private Dialog dialog;
     private Context context;
+    Filter mfilter;
 
     public MyAdapter(ArrayList<Data> mydata, Context context) {
         Mydata = mydata;
         this.context = context;
+        items=mydata;
     }
+
     void setOnItemClickListener(View.OnClickListener l){ onItemClick = l;}
+  /**  @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+                items.clear();
+                if (charString.isEmpty()) {
+                    items = Mydata;
+                } else {
+                    List<Data> filteredList = new ArrayList<>();
+                    for (Data row : Mydata) {
+
+                        if (row.getString().toLowerCase().contains(charString.toLowerCase()) || row.getPhonenum().contains(charSequence)) {
+                            filteredList.add(row);
+                        }
+                    }
+
+                    items = filteredList;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = items;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                items = (ArrayList<Data>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
+    }*/
+     public void filter(String charText){
+        charText = charText.toLowerCase(Locale.getDefault());
+        items.clear();
+        if(charText.length()==0){
+            items.addAll(Mydata);
+        } else{
+            for(Data data : Mydata){
+                String name = data.getString();
+                if(name.toLowerCase().contains(charText)){
+                    items.add(data);
+                }
+            }
+        }
+        notifyDataSetChanged();
+
+    }
 
     @NonNull
     @Override

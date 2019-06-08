@@ -10,14 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> implements Filterable {
 
+    private ArrayList<Data> FilteredData;
     private ArrayList<Data> Mydata;
     private View.OnClickListener onItemClick;
     private Dialog dialog;
@@ -43,6 +46,58 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public int getItemCount() {
         return Mydata.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter()
+        {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence)
+            {
+                FilterResults results = new FilterResults();
+
+                //If there's nothing to filter on, return the original data for your list
+                if(charSequence == null || charSequence.length() == 0)
+                {
+                    results.values = Mydata;
+                    results.count = Mydata.size();
+                }
+                else
+                {
+                    ArrayList<Data> filterResultsData = new ArrayList<Data>();
+
+                    for(Data data : Mydata)
+                    {
+                        //In this loop, you'll filter through originalData and compare each item to charSequence.
+                        //If you find a match, add it to your new ArrayList
+                        //I'm not sure how you're going to do comparison, so you'll need to fill out this conditional
+                        if(Mydata.toString().toUpperCase().contains(Mydata.toString().toUpperCase()))
+                        {
+                            filterResultsData.add(data);
+                        }
+                    }
+
+                    results.values = filterResultsData;
+                    results.count = filterResultsData.size();
+                }
+
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults)
+            {
+                FilteredData = (ArrayList<Data>)filterResults.values;
+                notifyDataSetChanged();
+
+                if (filterResults.count>0){
+                    notifyDataSetChanged();
+                } else{
+
+                }
+            }
+        };
     }
 
 

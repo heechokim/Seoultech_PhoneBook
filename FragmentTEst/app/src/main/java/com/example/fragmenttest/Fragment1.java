@@ -72,6 +72,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
             @Override
             public void onTextChanged (CharSequence cs,int arg1, int arg2, int arg3){
                 // When user changed the Text
+                Fragment1.this.myAdapter.getFilter();
             }
 
             @Override
@@ -84,6 +85,10 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
             @Override
             public void afterTextChanged (Editable arg0){
                 // TODO Auto-generated method stub
+                String filterText = arg0.toString();
+                if(filterText.length()>0){
+
+                }
             }
 
         });
