@@ -17,14 +17,13 @@ import java.util.Locale;
 public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.ViewHolder> {
     private Context mCtx;
 
-    private List<Data> items= null;
+    private ArrayList<Data> items= null;
     private ArrayList<Data> arrayList;
 
     public FilterAdapter(ArrayList<Data> mydata, Context context) {
         this.mCtx=context;
-        this.items=mydata;
-        arrayList = new ArrayList<Data>();
-        arrayList.addAll(mydata);
+        this.arrayList = mydata;
+        this.items.addAll(mydata);
     }
 
     @Override

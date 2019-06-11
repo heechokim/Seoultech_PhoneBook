@@ -8,6 +8,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 // 검색을 위해 두 개 더 임포트 때림
