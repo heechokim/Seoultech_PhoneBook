@@ -38,7 +38,7 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Data item=items.get(position);
 
-        holder.tv_address.setText(item.getAddress());
+        holder.tv_address.setText(item.getString());
     }
 
     @Override
