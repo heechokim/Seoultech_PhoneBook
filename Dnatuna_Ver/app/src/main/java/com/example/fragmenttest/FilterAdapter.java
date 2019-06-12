@@ -22,8 +22,9 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.ViewHolder
 
     public FilterAdapter(ArrayList<Data> mydata, Context context) {
         this.mCtx=context;
-        this.arrayList = mydata;
-        this.items.addAll(mydata);
+        this.items = mydata;
+        arrayList = new ArrayList<Data>();
+        arrayList.addAll(items);
     }
 
     @Override
