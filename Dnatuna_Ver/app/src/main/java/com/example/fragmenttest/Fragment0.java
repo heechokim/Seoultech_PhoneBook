@@ -21,18 +21,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Fragment1 extends Fragment implements View.OnClickListener {
+public class Fragment0 extends Fragment implements View.OnClickListener {
 
     View view;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager recyclerviewLayoutmanager;
     private ArrayList<Data> data = new ArrayList<>();
-    private MyAdapter myAdapter;
+    public FilterAdapter myAdapter;
     private Dialog dialog;
     private Intent intent;
 
@@ -46,7 +47,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         recyclerView.setHasFixedSize(true); // 리사이클러뷰를 고정시켜준다. 왜 고정시키는줄은 모르겠음 ㅋㅋ
         recyclerviewLayoutmanager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(recyclerviewLayoutmanager);
-        myAdapter = new MyAdapter(data,getContext());
+        myAdapter = new FilterAdapter(data,getContext());
         myAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(myAdapter);
 

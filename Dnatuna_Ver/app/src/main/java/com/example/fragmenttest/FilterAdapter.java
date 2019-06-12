@@ -5,31 +5,34 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 
 public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.ViewHolder> {
     private Context mCtx;
-
+    private View.OnClickListener onItemClick;
     private ArrayList<Data> items= null;
     private ArrayList<Data> arrayList;
 
     public FilterAdapter(ArrayList<Data> mydata, Context context) {
         this.mCtx=context;
+        this.items = new ArrayList<Data>();
         this.items = mydata;
         arrayList = new ArrayList<Data>();
         arrayList.addAll(items);
     }
+    void setOnItemClickListener(View.OnClickListener l){ onItemClick = l;}
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.item,null);
+
+        v.setOnClickListener(onItemClick);
+
         return new ViewHolder(v);
     }
 
@@ -63,15 +66,11 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView iv_icon;
         TextView tv_address;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
-            tv_address= (TextView) itemView.findViewById(R.id.tvAddress);
-            iv_icon = (ImageView) itemView.findViewById(R.id.ivIcon);
-
+            tv_address= (TextView) itemView.findViewById(R.id.textview_item);
         }
 
 

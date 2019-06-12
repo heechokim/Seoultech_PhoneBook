@@ -1,26 +1,20 @@
 package com.example.fragmenttest;
 
-import android.app.Activity;
-import android.app.Dialog;
+
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
+
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private ArrayList<Data> Mydata;
     private View.OnClickListener onItemClick;
-    private Dialog dialog;
     private Context context;
 
     public MyAdapter(ArrayList<Data> mydata, Context context) {
