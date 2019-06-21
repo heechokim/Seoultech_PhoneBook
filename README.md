@@ -21,7 +21,7 @@ If you have to make a call in a hurry, it is very inconvenient to go through thi
 ```
 MIT License
 
-Copyright (c) 2019 kimchohee, DNATUNA
+Copyright (c) 2019 kimchohee, GeonHun Kim
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
