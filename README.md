@@ -1,5 +1,6 @@
 # SeoulTech-PhoneBook
 
+> 서울과학기술대학교 전화번호부 어플
 
 <br>
 
@@ -16,7 +17,7 @@ If you have to make a call in a hurry, it is very inconvenient to go through thi
 <br>
 
 ## License
----
+
 
 
 
