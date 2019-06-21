@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/** 검색을 위한 fragment 입니다. */
 public class Fragment0 extends Fragment implements View.OnClickListener {
 
     View view;
@@ -44,7 +45,7 @@ public class Fragment0 extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_right2, container, false);
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerview_right2);
-        recyclerView.setHasFixedSize(true); // 리사이클러뷰를 고정시켜준다. 왜 고정시키는줄은 모르겠음 ㅋㅋ
+        recyclerView.setHasFixedSize(true); // 리사이클러뷰를 고정시켜준다.
         recyclerviewLayoutmanager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(recyclerviewLayoutmanager);
         myAdapter = new FilterAdapter(data,getContext());

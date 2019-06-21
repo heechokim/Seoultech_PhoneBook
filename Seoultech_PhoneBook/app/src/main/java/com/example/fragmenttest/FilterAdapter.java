@@ -72,7 +72,5 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.ViewHolder
             super(itemView);
             tv_address= (TextView) itemView.findViewById(R.id.textview_item);
         }
-
-
     }
 }
