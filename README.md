@@ -18,7 +18,7 @@ If you have to make a call in a hurry, it is very inconvenient to go through thi
 
 <br>
 
-## Application
+## 📱 Application
 
 ![SeoulTech_PhoneBook1](./SeoulTech_PhoneBook1.gif) ![SeoulTech_PhoneBook2](./SeoulTech_PhoneBook2.gif) ![SeoulTech_PhoneBook3](./SeoulTech_PhoneBook3.gif)
 
