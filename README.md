@@ -20,7 +20,7 @@ If you have to make a call in a hurry, it is very inconvenient to go through thi
 
 ## Application
 
-![SeoulTech_PhoneBook](.SeoulTech_PhoneBook.gif)
+![SeoulTech_PhoneBook](./SeoulTech_PhoneBook.gif)
 
 ## License
 
