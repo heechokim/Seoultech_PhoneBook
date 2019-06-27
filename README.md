@@ -22,6 +22,8 @@ If you have to make a call in a hurry, it is very inconvenient to go through thi
 
 ![SeoulTech_PhoneBook](./SeoulTech_PhoneBook.gif)
 
+<br>
+
 ## License
 
 ```
