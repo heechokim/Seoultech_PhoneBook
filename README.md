@@ -1,6 +1,7 @@
 # SeoulTech-PhoneBook
 
-> 서울과학기술대학교 전화번호부 어플
+* 서울과학기술대학교 전화번호부 앱
+* [Google Play 스토어](https://play.google.com/store/apps/details?id=com.kimchohee.fragmenttest)
 
 <img src = "https://img.shields.io/badge/version-v1.0-green.svg"> <img src = "https://img.shields.io/badge/license-MIT-brightgreen.svg">
 
